@@ -1,12 +1,9 @@
-@extends('layouts.app')
+@extends('auth.app')
 
 @section('content')
-
-<div class="limiter">
-    <div class="container-login100" style="background-image: url({{asset('Login_v5/images/bg-01.jpg')}});">
-        <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
         <form class="login100-form validate-form flex-sb flex-w" action="{{ route('login') }}" method="POST">
-                <span class="login100-form-title p-b-53">
+            @csrf    
+            <span class="login100-form-title p-b-53">
                     Sign In With
                 </span>
 
@@ -35,7 +32,7 @@
                         Password
                     </span>
 
-                    <a href="#" class="txt2 bo1 m-l-5">
+                    <a href="{{ route('password.request') }}" class="txt2 bo1 m-l-5">
                         Forgot?
                     </a>
                 </div>
@@ -60,9 +57,6 @@
                     </a>
                 </div>
             </form>
-        </div>
-    </div>
-</div>
 
 
 <div id="dropDownSelect1"></div>

@@ -4,8 +4,6 @@
 <head>
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="img/fav.png">
     <!-- Author Meta -->
     <meta name="author" content="codepixer">
     <!-- Meta Description -->
@@ -23,7 +21,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="Login_v5/images/icons/favicon.ico" />
+    <link rel="icon" type="image/png" href="img/logo.png" />
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="Login_v5/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
@@ -67,81 +65,11 @@
 
 <body>
     <div id="app">
-        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-        {{ config('app.name', 'Laravel') }}
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li>
-                @endif
-                @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-                @endguest
-            </ul>
-        </div>
-    </div>
-    </nav> --}}
     <header id="header" id="home">
-        <div class="header-top">
-            <div class="container">
-                <div class="row justify-content-end">
-                    <div class="col-lg-8 col-sm-4 col-8 header-top-right no-padding">
-                        <ul>
-                            <li>
-                                Mon-Fri: 8am to 2pm
-                            </li>
-                            <li>
-                                Sat-Sun: 11am to 4pm
-                            </li>
-                            <li>
-                                <a href="tel:(012) 6985 236 7512">(012) 6985 236 7512</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+                    <a href="index.html"><img style="width:30%;height:30px" src="img/logo.png" alt="" title="" /></a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
@@ -191,6 +119,7 @@
     <main class="py-4">
         @yield('content')
     </main>
+    @extends('layouts.footer')
     </div>
 </body>
 

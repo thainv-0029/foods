@@ -15,7 +15,6 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Coffee</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
@@ -47,6 +46,14 @@
     <link rel="stylesheet" type="text/css" href="Login_v5/css/util.css">
     <link rel="stylesheet" type="text/css" href="Login_v5/css/main.css">
     <!--===============================================================================================-->
+
+    <title>Fast food</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <!--
+    CSS
+    ============================================= -->
+
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -55,7 +62,9 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
+
     <link rel="stylesheet" href="css/custom.css">
+
 </head>
 
 <body>

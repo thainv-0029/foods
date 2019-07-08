@@ -2,61 +2,58 @@
 
 @section('content')
         <form class="login100-form validate-form flex-sb flex-w" action="{{ route('login') }}" method="POST">
-            @csrf
-            @foreach ($errors->all() as $error)
-                <p class="alert alert-danger form-alert">{{ $error }}</p>
-            @endforeach    
+            @csrf    
             <span class="login100-form-title p-b-53">
-                    {{ __('Log In With') }}
+                    Sign In With
                 </span>
 
                 <a href="#" class="btn-face m-b-20">
                     <i class="fa fa-facebook-official"></i>
-                    {{ __('Facebook') }}
+                    Facebook
                 </a>
 
                 <a href="#" class="btn-google m-b-20">
                     <img src="Login_v5/images/icons/icon-google.png" alt="GOOGLE">
-                    {{ __('Google') }}
+                    Google
                 </a>
 
                 <div class="p-t-31 p-b-9">
                     <span class="txt1">
-                        {{ __('Email') }}
+                        Username
                     </span>
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="Email is required">
-                    <input class="input100" type="text" name="email">
+                <div class="wrap-input100 validate-input" data-validate="Username is required">
+                    <input class="input100" type="text" name="username">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="p-t-13 p-b-9">
                     <span class="txt1">
-                        {{ __('Password') }}
+                        Password
                     </span>
 
                     <a href="{{ route('password.request') }}" class="txt2 bo1 m-l-5">
-                        {{ __('Forgot?') }}
+                        Forgot?
                     </a>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" name="password">
+                    <input class="input100" type="password" name="pass">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="container-login100-form-btn m-t-17">
                     <button class="login100-form-btn">
-                        {{ __('Log In') }}
+                        Sign In
                     </button>
                 </div>
 
                 <div class="w-full text-center p-t-55">
                     <span class="txt2">
-                        {{ __('Not a member?') }}
+                        Not a member?
                     </span>
 
                 <a href="{{ route('register') }}" class="txt2 bo1">
-                        {{ __('Register now') }}
+                        Sign up now
                     </a>
                 </div>
             </form>

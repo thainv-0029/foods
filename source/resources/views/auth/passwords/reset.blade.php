@@ -46,15 +46,15 @@
 
     <div class="w-full text-center p-t-55">
         <a href="{{ route('login') }}" class="txt2 bo1">
-            {{ __('Login') }}
+            Login
         </a>
 
         <span class="txt2">
-            {{ __('Or') }}
+            Or
         </span>
 
         <a href="{{ route('register') }}" class="txt2 bo1">
-            {{ __('Regisyter now') }}
+            Signup now
         </a>
     </div>
 </form>

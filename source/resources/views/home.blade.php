@@ -3,6 +3,8 @@
 @section('content')
 
 <!-- start banner Area -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <section class="banner-area" id="home">
     <div class="container">
         <div class="row fullscreen d-flex align-items-center justify-content-start">
@@ -28,24 +30,39 @@
                 </div>
             </div>
         </div>
+
+        @if($products->count() != 0)
         <div class="row">
-            @foreach ($categories as $item)
+            @foreach ($products as $item)
             <div class="col-lg-4">
                 <div class="single-menu">
                     <div class="title-div justify-content-between d-flex">
                         <h4>{{$item->name}}</h4>
-                        <p class="price float-right">
-                            ${{$item->price}}
-                        </p>
                     </div>
                     <img class="card-img-top" src="/img/categories/{{$item->img}}" height="200px">
-                    <p class="card-body">
+                    <p class="card-body" style="height: 60px">
                         {{$item->description}}
                     </p>
+                    <div class="card-body">
+                        <p class="price float-left">
+                            ${{$item->price}}
+                        </p>
+                        <form method="POST" action="{{ route('add_cart') }}">
+                            @csrf
+                            <input type="text"" value="{{ Auth::user()->id }}" name="user_id" hidden>
+                            <input type="text" value="{{$item->id}}" name="product_id" hidden>
+                            <input type="text" value="1" name="quantity" hidden>
+                            <button type="submit" class="btn btn-warning float-right">Buy now <span class="fa fa-shopping-cart"></span></button>
+                        </form>
+                        
+                    </div>
                 </div>
             </div>
             @endforeach
         </div>
+        @else
+            <h1 style="text-align:center" class="bg bg-warning">Not have product! Check again database!</h1>
+        @endif
     </div>
 </section>
 <!-- End menu Area -->

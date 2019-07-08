@@ -1,65 +1,64 @@
-@extends('layouts.app')
+@extends('auth.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
+<form class="login100-form validate-form flex-sb flex-w" action="{{ route('password.update') }}" method="POST">
+    @csrf
+    <span class="login100-form-title p-b-53">
+        {{ __('Fogotpassword') }}
+    </span>
+    {{--
+                <a href="#" class="btn-face m-b-20">
+                    <i class="fa fa-facebook-official"></i>
+                    Facebook
+                </a>
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+                <a href="#" class="btn-google m-b-20">
+                    <img src="Login_v5/images/icons/icon-google.png" alt="GOOGLE">
+                    Google
+                </a> --}}
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="p-t-13 p-b-9">
+        <span class="txt1">
+            {{ __('New Password') }}
+        </span>
     </div>
-</div>
+
+    <div class="wrap-input100 validate-input" data-validate="Password is required">
+        <input class="input100" type="password" name="password">
+        <span class="focus-input100"></span>
+    </div>
+    <div class="p-t-13 p-b-9">
+        <span class="txt1">
+            {{ __('Confirm Password') }}
+        </span>
+    </div>
+    <div class="wrap-input100 validate-input" data-validate="Password is required">
+        <input class="input100" type="password" name="confirm_password">
+        <span class="focus-input100"></span>
+    </div>
+
+    <div class="container-login100-form-btn m-t-17">
+        <button class="login100-form-btn">
+            {{ __('Submit') }}
+        </button>
+    </div>
+
+    <div class="w-full text-center p-t-55">
+        <a href="{{ route('login') }}" class="txt2 bo1">
+            Login
+        </a>
+
+        <span class="txt2">
+            Or
+        </span>
+
+        <a href="{{ route('register') }}" class="txt2 bo1">
+            Signup now
+        </a>
+    </div>
+</form>
+<div id="dropDownSelect1"></div>
+
+
 @endsection

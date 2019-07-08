@@ -2657,7 +2657,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .single-footer-widget ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: #777777;
+  color: #fff;
   font-weight: 300;
 }
 

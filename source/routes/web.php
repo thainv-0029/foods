@@ -16,4 +16,6 @@ Route::get('/','HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/cart', 'HomeController@index');
+Route::post('/cart', 'CartController@store')->name('add_cart');
 

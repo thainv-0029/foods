@@ -5,7 +5,7 @@
 <form class="login100-form validate-form flex-sb flex-w" action="{{ route('password.email')}}" method="POST">
                 @csrf
             <span class="login100-form-title p-b-53">
-                    Fogot password
+                    {{ __('Fogot password') }}
                 </span>
 {{--
                 <a href="#" class="btn-face m-b-20">
@@ -20,7 +20,7 @@
                 
                 <div class="p-t-31 p-b-9">
                     <span class="txt1">
-                        Email
+                        {{ __('Email') }}
                     </span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Username is required">
@@ -29,21 +29,21 @@
                 </div>
                 <div class="container-login100-form-btn m-t-17">
                     <button class="login100-form-btn">
-                        Send email
+                        {{ __('Send email') }}
                     </button>
                 </div>
 
                 <div class="w-full text-center p-t-55">
                     <a href="{{ route('login') }}" class="txt2 bo1">
-                            Login
+                            {{ __('Log in') }}
                         </a>
         
                     <span class="txt2">
-                        Or
+                        {{ __('Or') }}
                     </span>
 
                 <a href="{{ route('register') }}" class="txt2 bo1">
-                        Signup now
+                        {{ __('Register now') }}
                     </a>
                 </div>
             </form>

@@ -8,7 +8,7 @@ use App\Http\Request\RoleFormRequest;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
-class RolesController extends Controller
+class RoleController extends Controller
 {
     //
     public function index() 

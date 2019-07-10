@@ -28,19 +28,13 @@ class UsersController extends Controller
 
     public function update($id, UserUpdateRequest $request)
     {
-        // $user = User::whereId($id)->firstOrFail();
-        // $user->name = $request->get('name');
-        // $user->email = $request->get('email');
-        // $password = $request->get('password');
-        // if ($password != "") {
-        //     $user->password = Hash::make($password);
-        // }
-        // $user->save();
-        // $user->syncRoles($request->get('role'));
-        // return redirect(action('Admin\UsersController@edit', $user->id))->with('status', 'The user has been updated!');
         $user = User::whereId($id)->firstOrFail();
         $user->name = $request->get('name');
-        $user->email = $request->get('email');
+        // $user->email = $request->get('email');
+        $user->email = $request->get('email') != null ? $request->get('email') : $user->email;
+        // if($request->get('email') != null) {
+        //     $user->email = $request->get('email');
+        // }
         $password = $request->get('password');
         if ($password != "") {
             $user->password = Hash::make($password);

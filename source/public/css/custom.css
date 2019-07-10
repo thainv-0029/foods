@@ -6,3 +6,16 @@
 .form-alert {
     width: 100%;
 }
+
+.admin-page-form {
+    margin: auto;
+    width: 60%;
+}
+
+.submit-btn-group{
+    margin: auto;
+}
+
+.submit-btn-group > button {
+    border-radius: 5px;
+}

@@ -12,13 +12,17 @@
 */
 
 Auth::routes();
-
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/cart', 'CartController@show');
 Route::post('/cart', 'CartController@create')->name('addcart');
 Route::get('/products/detail/{id?}','ProductController@detail');
-Route::get('/order','OrderController@checkout');
+Route::get('/order','OrderController@checkout')->name('order');
 Route::get('/cart/destroy','CartController@destroy')->name('destroyCart');
+Route::post('/detail','ProductController@index')->name('detail');
+Route::get('/remove/{rowId?}','CartController@remove');
+Route::post('/edit','CartController@edit')->name('edit');
+Route::post('/placeOrder','OrderController@store')->name('placeOrder');
 
 Route::group(
     array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'),

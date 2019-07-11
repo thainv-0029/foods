@@ -11,6 +11,7 @@
     <!-- Favicons -->
     <link rel="shortcut icon" href="/template_ver2.0/images/favicon.ico">
     <link rel="apple-touch-icon" href="/template_ver2.0/images/icon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/template_ver2.0/css/bootstrap.min.css">
@@ -43,7 +44,7 @@
                     <div class="row">
                         <div class="col-lg-2 col-sm-4 col-md-6 order-1 order-lg-1">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="/">
                                     <img style="width:120px" src="/template_ver2.0/images/logo/foody.png"
                                         alt="logo images">
                                 </a>
@@ -53,48 +54,44 @@
                             <div class="main__menu__wrap">
                                 <nav class="main__menu__nav d-none d-lg-block">
                                     <ul class="mainmenu">
-                                        <li class="drop"><a href="index.html"><i class="zmdi zmdi-home"></i> Home</a>
+                                        <li class="drop"><a href="/">Home</a>
                                             <ul class="dropdown__menu">
-                                                <li><a href="index.html">Home Food Delivery</a></li>
-                                                <li><a href="index-2.html">Home Pizza Delivery</a></li>
-                                                <li><a href="index-3.html">Home Backery Delivery</a></li>
-                                                <li><a href="index-4.html">Home Box Layout</a></li>
+                                                <li><a href="#">Home Food Delivery</a></li>
+                                                <li><a href="#">Home Pizza Delivery</a></li>
+                                                <li><a href="#">Home Backery Delivery</a></li>
+                                                <li><a href="#">Home Box Layout</a></li>
                                             </ul>
                                         </li>
-                                        <li class="drop"><a href="menu-grid.html"><i class="zmdi zmdi-menu"></i>
-                                                Menu</a>
+                                        <li class="drop"><a href="#">Menu</a>
                                             <ul class="dropdown__menu">
-                                                <li><a href="menu-grid.html">Menu Grid</a></li>
-                                                <li><a href="menu-list.html">Menu List</a></li>
-                                                <li><a href="menu-details.html">Menu Details</a></li>
+                                                <li><a href="/home-grid">Menu Grid</a></li>
+                                                <li><a href="/home">Menu List</a></li>
                                             </ul>
                                         </li>
-                                        <li class="drop"><a href="blog-list.html"><i class="zmdi zmdi-blogger"></i>
-                                                Blog</a>
+                                        <li class="drop"><a href="blog-list.html">Blog</a>
                                             <ul class="dropdown__menu">
-                                                <li><a href="blog-list.html">Blog List</a></li>
-                                                <li><a href="blog-mesonry.html">Blog mesonry</a></li>
-                                                <li><a href="blog-grid-left-sidebar.html">Blog Grid</a></li>
-                                                <li><a href="blog-list-right-sidebar.html">Blog List with right
-                                                        sidebar</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                                <li><a href="#">Blog List</a></li>
+                                                <li><a href="#">Blog mesonry</a></li>
+                                                <li><a href="#">Blog Grid</a></li>
+                                                <li><a href="#">Blog List with right sidebar</a></li>
+                                                <li><a href="#">Blog Details</a></li>
                                             </ul>
                                         </li>
-                                        <li class="drop"><a href="#"><i class="zmdi zmdi-pages"></i> Pages</a>
+                                        <li class="drop"><a href="#">Pages</a>
                                             <ul class="dropdown__menu">
-                                                <li><a href="service.html">Service</a></li>
-                                                <li><a href="cart.html">Cart Page</a></li>
-                                                <li><a href="checkout.html">Checkout Page</a></li>
-                                                <li><a href="contact.html">Contact Page</a></li>
+                                                <li><a href="#">Service</a></li>
+                                                <li><a href="#">Cart Page</a></li>
+                                                <li><a href="#">Checkout Page</a></li>
+                                                <li><a href="#">Contact Page</a></li>
                                             </ul>
                                         </li>
                                         @if(Auth::user()->hasRole('admin'))
                                         <li><a href="{{route('admin')}}">Admin Page</a></li>
                                         @else
-                                        <li class="drop"><a href="#"><i class="zmdi zmdi-account-o"></i> Account</a>
+                                        <li class="drop"><a href="#">Account</a>
                                             <ul class="dropdown__menu">
-                                                <li><a href="service.html">Profile</a></li>
-                                                <li><a href="cart.html">History</a></li>
+                                                <li><a href="#">Profile</a></li>
+                                                <li><a href="#">History</a></li>
                                             </ul>
                                         </li>
                                         @endif
@@ -153,19 +150,19 @@
                         <!-- Cartbox Single Item -->
                         <div class="cartbox__item">
                             <div class="cartbox__item__thumb">
-                                <a href="/product_detail/3">
+                                <a>
                                     <img src="/template_ver2.0/images/menu-list/{!!$item->options->img!!}"
                                         alt="/template_ver2.0/images/menu-list/{!!$item->options->img!!}">
                                 </a>
                             </div>
                             <div class="cartbox__item__content">
-                                <h5><a href="product-details.html" class="product-name">{!!$item->name!!}</a></h5>
-                                <p><span>{!!$item->quantity!!}</span>x<span>{!!$item->price!!} $</span></p>
-                                <span class="price">{!!$item->qty!!} $</span>
+                                <h5><a class="product-name">{!!$item->name!!}<span style="color:green"> ({!!$item->price!!}$) </span></a></h5>
+                                <p><span>{!!$item->qty!!}</span></p>
+                                <span class="price">{!!$item->qty * $item->price!!}$</span>
                             </div>
-                            <button class="cartbox__item__remove">
+                            {{-- <button class="cartbox__item__remove">
                                 <i class="fa fa-trash"></i>
-                            </button>
+                            </button> --}}
                         </div><!-- //Cartbox Single Item -->
                         @endforeach
 

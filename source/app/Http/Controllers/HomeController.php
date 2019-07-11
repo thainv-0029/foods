@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
-use App\Cart;
+use Cart;
 use Auth;
 
 class HomeController extends Controller
@@ -28,9 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::all();
-        $user = Auth::user()->id;
-        $carts = Cart::where('user_id',$user)->get();
-        $count = count($carts);
-        return view ('home',compact('products','carts','count'));  
+        $carts = Cart::content();
+        return view ('home',compact('products','carts'));  
     }
 }

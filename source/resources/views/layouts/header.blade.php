@@ -124,7 +124,7 @@
                                 <div class="shopping__cart">
                                     <a class="minicart-trigger" href="#"><i class="zmdi zmdi-shopping-basket"></i></a>
                                     <div class="shop__qun">
-                                        <span>{{$count}}</span>
+                                        <span>{{Cart::count()}}</span>
                                     </div>
                                 </div>
                             </div>

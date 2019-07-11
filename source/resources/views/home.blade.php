@@ -43,26 +43,28 @@
                     <!-- Start Single Content -->
                     <div class="food__list__tab__content tab-pane fade show active" id="nav-all" role="tabpanel">
                         <!-- Start Single Food -->
+                        
+
                         @foreach($products as $product)
                         <div class="single__food__list d-flex wow fadeInUp">
                             <div class="food__list__thumb">
                                 <a href="menu-details.html">
-                                    <img src="/template_ver2.0/images/menu-list/{{$product->img}}"
+                                    <img src="/template_ver2.0/images/menu-list/{!!$product->img!!}"
                                         alt="list food images">
                                 </a>
                             </div>
                             <div class="food__list__inner d-flex align-items-center justify-content-between">
                                 <div class="food__list__details">
-                                    <h2><a href="menu-details.html">{{$product->name}}</a></h2>
-                                    <p>{{$product->description}}</p>
+                                    <h2><a href="menu-details.html">{!!$product->name!!}</a></h2>
+                                    <p>{!!$product->description!!}</p>
                                     <div class="list__btn">
                                         <a class="food__btn grey--btn theme--hover"
-                                            href="/product_detail/{{$product->id}}">Order Now</a>
+                                            href="/products/detail/{!!$product->id!!}">Order Now</a>
                                     </div>
                                 </div>
                                 <div class="food__rating">
                                     <div class="list__food__prize">
-                                        <span>{{$product->price}}</span>
+                                        <span>{!!$product->price!!}</span>
                                     </div>
                                     <ul class="rating">
                                         <li><i class="zmdi zmdi-star"></i></li>
@@ -76,6 +78,7 @@
                         </div>
                         <!-- End Single Food -->
                         @endforeach
+
                     </div>
                     <!-- End Single Content -->
                 </div>
@@ -170,29 +173,32 @@
 
             <div class="cartbox__items">
 
-                @foreach($carts as $cart)
+
+                @foreach($carts as $item)
                 <!-- Cartbox Single Item -->
                 <div class="cartbox__item">
                     <div class="cartbox__item__thumb">
-                        <a href="/product_detail/{{$cart->product_id}}">
-                            <img src="/template_ver2.0/images/menu-list/{{$cart->img}}" alt="small thumbnail">
+                        <a href="/product_detail/3">
+                            <img src="/template_ver2.0/images/menu-list/{!!$item->options->img!!}" alt="/template_ver2.0/images/menu-list/{!!$item->options->img!!}">
                         </a>
                     </div>
                     <div class="cartbox__item__content">
-                        <h5><a href="product-details.html" class="product-name">{{$cart->product_name}}</a></h5>
-                        <p><span>{{$cart->quantity}}</span>x<span>{{$cart->price}} $</span></p>
-                        <span class="price">{{$cart->sum}} $</span>
+                        <h5><a href="product-details.html" class="product-name">{!!$item->name!!}</a></h5>
+                        <p><span>{!!$item->quantity!!}</span>x<span>{!!$item->price!!} $</span></p>
+                        <span class="price">{!!$item->qty!!} $</span>
                     </div>
                     <button class="cartbox__item__remove">
                         <i class="fa fa-trash"></i>
                     </button>
                 </div><!-- //Cartbox Single Item -->
                 @endforeach
+                
+
 
             </div>
             <div class="cartbox__total">
                 <ul>
-                    <li class="grandtotal">Total<span class="price">$75</span></li>
+                    <li class="grandtotal">Total<span class="price">{!!Cart::subtotal()!!}  $</span></li>
                 </ul>
             </div>
             <div class="cartbox__buttons">

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 use Auth;
-use App\Cart;
+use Cart;
 
 class ProductController extends Controller
 {
@@ -87,9 +87,7 @@ class ProductController extends Controller
     }
 
     public function detail($id){
-        $detail = Product::where('id','=',$id)->first();
-        $category = Category::where('id','=', $detail->category_id)->first();
-        $count = Cart::where('user_id',Auth::user()->id)->count();
-        return view('product_detail',compact('detail','category','count'));
+        $detail = Product::where('id',$id)->first();
+        return view ('product_detail',compact('detail'));
     }
 }

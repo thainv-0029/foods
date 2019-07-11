@@ -46,17 +46,17 @@
                         
 
                         @foreach($products as $product)
-                        <div class="single__food__list d-flex wow fadeInUp">
+                        <div class="single__food__list d-flex wow fadeInUp col-sm-12">
                             <div class="food__list__thumb">
                                 <a href="menu-details.html">
-                                    <img src="/template_ver2.0/images/menu-list/{!!$product->img!!}"
+                                    <img style="width: 469px; height:253px;" src="{{ asset('storage/img/upload/'.$product->img) }}"
                                         alt="list food images">
                                 </a>
                             </div>
                             <div class="food__list__inner d-flex align-items-center justify-content-between">
                                 <div class="food__list__details">
-                                    <h2><a href="menu-details.html">{!!$product->name!!}</a></h2>
-                                    <p>{!!$product->description!!}</p>
+                                    <h2><a href="menu-details.html">{!! $product->name!!}</a></h2>
+                                    <p style="width:472.5px;height:72px">{!!$product->description!!}</p>
                                     <div class="list__btn">
                                         <a class="food__btn grey--btn theme--hover"
                                             href="/products/detail/{!!$product->id!!}">Order Now</a>

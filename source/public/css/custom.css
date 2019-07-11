@@ -28,3 +28,7 @@
 .card, .card table , .card .pagination > li {
     border-radius: 5px;
 }
+
+.food__list__thumb, .single__food__list {
+    width: 100%;
+}

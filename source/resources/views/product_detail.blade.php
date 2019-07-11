@@ -9,7 +9,7 @@
                 <div class="food__menu__container">
                     <div class="food__menu__inner d-flex flex-wrap flex-md-nowrap flex-lg-nowrap">
                         <div class="food__menu__thumb">
-                            <img src="/template_ver2.0/images/menu-list/{!!$detail->img!!}" alt="images">
+                            <img src="{{ asset('storage/img/upload/'.$detail->img) }}" alt="storage/img/upload/{!!$detail->img!!}">
                         </div>
                         <div class="food__menu__details">
                             <div class="food__menu__content">

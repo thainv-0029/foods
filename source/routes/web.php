@@ -14,10 +14,10 @@
 Route::get('/', 'HomeController@index');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/cart', 'HomeController@index');
-Route::post('/cart', 'CartController@store')->name('add_cart');
+Route::post('/cart', 'CartController@store')->name('addcart');
+Route::get('/product_detail/{id?}','ProductController@detail')->name('');
 
 Route::group(
     array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'),

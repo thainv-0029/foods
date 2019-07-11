@@ -2,252 +2,208 @@
 
 @section('content')
 
-<!-- start banner Area -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<section class="banner-area" id="home">
-    <div class="container">
-        <div class="row fullscreen d-flex align-items-center justify-content-start">
-            <div class="banner-content col-lg-7">
-                <h1>
-                    Start your day with <br>
-                    a black Coffee
-                </h1>
-                <a href="#" class="primary-btn text-uppercase">Buy Now</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End banner Area -->
-
-<!-- Start menu Area -->
-<section class="menu-area section-gap" id="coffee">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-60 col-lg-10">
-                <div class="title text-center">
-                    <h1 class="mb-10">Best food of week</h1>
-                </div>
-            </div>
-        </div>
-
-        @if($products->count() != 0)
-        <div class="row">
-            @foreach ($products as $item)
-            <div class="col-lg-4">
-                <div class="single-menu">
-                    <div class="title-div justify-content-between d-flex">
-                        <h4>{{$item->name}}</h4>
-                    </div>
-                    <img class="card-img-top" src="/img/categories/{{$item->img}}" height="200px">
-                    <p class="card-body" style="height: 60px">
-                        {{$item->description}}
-                    </p>
-                    <div class="card-body">
-                        <p class="price float-left">
-                            ${{$item->price}}
-                        </p>
-                        <form method="POST" action="{{ route('add_cart') }}">
-                            @csrf
-                            <input type="text"" value="{{ Auth::user()->id }}" name="user_id" hidden>
-                            <input type="text" value="{{$item->id}}" name="product_id" hidden>
-                            <input type="text" value="1" name="quantity" hidden>
-                            <button type="submit" class="btn btn-warning float-right">Buy now <span class="fa fa-shopping-cart"></span></button>
-                        </form>
-                        
+<!-- Start Bradcaump area -->
+<div class="ht__bradcaump__area bg-image--18">
+    <div class="ht__bradcaump__wrap d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="bradcaump__inner text-center">
+                        <h2 class="bradcaump-title">Welcome</h2>
+                        <nav class="bradcaump-inner">
+                            {{-- <a class="breadcrumb-item" href="index.html">Hi</a>
+                            <span class="brd-separetor"><i class="zmdi zmdi-long-arrow-right"></i></span> --}}
+                            <span class="breadcrumb-item active">{{Auth::user()->name}}</span>
+                        </nav>
                     </div>
                 </div>
             </div>
-            @endforeach
         </div>
-        @else
-            <h1 style="text-align:center" class="bg bg-warning">Not have product! Check again database!</h1>
-        @endif
     </div>
-</section>
-<!-- End menu Area -->
-
-<!-- Start gallery Area -->
-<section class="gallery-area section-gap" id="gallery">
+</div>
+<!-- End Bradcaump area -->
+<!-- Start Menu Grid Area -->
+<section class="food__menu__grid__area section-padding--lg">
     <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-60 col-lg-10">
-                <div class="title text-center">
-                    <h1 class="mb-10">What kind of Coffee we serve for you</h1>
-                    <p>Who are in extremely love with eco friendly system.</p>
+        {{-- <div class="row">
+            <div class="col-lg-12">
+                <div class="food__nav nav nav-tabs" role="tablist">
+                    <a class="active" id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab">All</a>
+                    <a id="nav-breakfast-tab" data-toggle="tab" href="#nav-breakfast" role="tab">Breakfast</a>
+                    <a id="nav-lunch-tab" data-toggle="tab" href="#nav-lunch" role="tab">Lunch</a>
+                    <a id="nav-dinner-tab" data-toggle="tab" href="#nav-dinner" role="tab">Dinner</a>
+                    <a id="nav-coffee-tab" data-toggle="tab" href="#nav-coffee" role="tab">Coffee</a>
+                    <a id="nav-snacks-tab" data-toggle="tab" href="#nav-snacks" role="tab">Snacks</a>
+                </div>
+            </div>
+        </div> --}}
+        <div class="row mt--30">
+            <div class="col-lg-12">
+                <div class="fd__tab__content tab-content" id="nav-tabContent">
+                    <!-- Start Single Content -->
+                    <div class="food__list__tab__content tab-pane fade show active" id="nav-all" role="tabpanel">
+                        <!-- Start Single Food -->
+                        @foreach($products as $product)
+                        <div class="single__food__list d-flex wow fadeInUp">
+                            <div class="food__list__thumb">
+                                <a href="menu-details.html">
+                                    <img src="/template_ver2.0/images/menu-list/{{$product->img}}"
+                                        alt="list food images">
+                                </a>
+                            </div>
+                            <div class="food__list__inner d-flex align-items-center justify-content-between">
+                                <div class="food__list__details">
+                                    <h2><a href="menu-details.html">{{$product->name}}</a></h2>
+                                    <p>{{$product->description}}</p>
+                                    <div class="list__btn">
+                                        <a class="food__btn grey--btn theme--hover"
+                                            href="/product_detail/{{$product->id}}">Order Now</a>
+                                    </div>
+                                </div>
+                                <div class="food__rating">
+                                    <div class="list__food__prize">
+                                        <span>{{$product->price}}</span>
+                                    </div>
+                                    <ul class="rating">
+                                        <li><i class="zmdi zmdi-star"></i></li>
+                                        <li><i class="zmdi zmdi-star"></i></li>
+                                        <li><i class="zmdi zmdi-star"></i></li>
+                                        <li><i class="zmdi zmdi-star"></i></li>
+                                        <li class="rating__opasity"><i class="zmdi zmdi-star"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Food -->
+                        @endforeach
+                    </div>
+                    <!-- End Single Content -->
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <a href="img/g1.jpg" class="img-pop-home">
-                    <img class="img-fluid" src="img/g1.jpg" alt="">
-                </a>
-                <a href="img/g2.jpg" class="img-pop-home">
-                    <img class="img-fluid" src="img/g2.jpg" alt="">
-                </a>
+        {{-- <div class="row">
+            <div class="col-lg-12">
+                <ul class="food__pagination d-flex justify-content-center align-items-center mt--130">
+                    <li><a href="#"><i class="zmdi zmdi-chevron-left"></i></a></li>
+                    <li><a href="#">1</a></li>
+                    <li class="active"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
+                </ul>
             </div>
-            <div class="col-lg-8">
-                <a href="img/g3.jpg" class="img-pop-home">
-                    <img class="img-fluid" src="img/g3.jpg" alt="">
-                </a>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <a href="img/g4.jpg" class="img-pop-home">
-                            <img class="img-fluid" src="img/g4.jpg" alt="">
+        </div> --}}
+    </div>
+</section>
+<!-- End Menu Grid Area -->
+
+<!-- Login Form -->
+<div class="accountbox-wrapper">
+    <div class="accountbox text-left">
+        <ul class="nav accountbox__filters" id="myTab" role="tablist">
+            <li>
+                <a class="active" id="log-tab" data-toggle="tab" href="#log" role="tab" aria-controls="log"
+                    aria-selected="true">Login</a>
+            </li>
+            <li>
+                <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                    aria-selected="false">Register</a>
+            </li>
+        </ul>
+        <div class="accountbox__inner tab-content" id="myTabContent">
+            <div class="accountbox__login tab-pane fade show active" id="log" role="tabpanel" aria-labelledby="log-tab">
+                <form action="#">
+                    <div class="single-input">
+                        <input class="cr-round--lg" type="text" placeholder="User name or email">
+                    </div>
+                    <div class="single-input">
+                        <input class="cr-round--lg" type="password" placeholder="Password">
+                    </div>
+                    <div class="single-input">
+                        <button type="submit" class="food__btn"><span>Go</span></button>
+                    </div>
+                    <div class="accountbox-login__others">
+                        <h6>Or login with</h6>
+                        <div class="social-icons">
+                            <ul>
+                                <li class="facebook"><a href="https://www.facebook.com/"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                <li class="twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li class="pinterest"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="accountbox__register tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <form action="#">
+                    <div class="single-input">
+                        <input class="cr-round--lg" type="text" placeholder="User name">
+                    </div>
+                    <div class="single-input">
+                        <input class="cr-round--lg" type="email" placeholder="Email address">
+                    </div>
+                    <div class="single-input">
+                        <input class="cr-round--lg" type="password" placeholder="Password">
+                    </div>
+                    <div class="single-input">
+                        <input class="cr-round--lg" type="password" placeholder="Confirm password">
+                    </div>
+                    <div class="single-input">
+                        <button type="submit" class="food__btn"><span>Sign Up</span></button>
+                    </div>
+                </form>
+            </div>
+            <span class="accountbox-close-button"><i class="zmdi zmdi-close"></i></span>
+        </div>
+    </div>
+</div><!-- //Login Form -->
+<!-- Cartbox -->
+<div class="cartbox-wrap">
+    <div class="cartbox text-right">
+        <button class="cartbox-close"><i class="zmdi zmdi-close"></i></button>
+        <div class="cartbox__inner text-left">
+
+            <div class="cartbox__items">
+
+                @foreach($carts as $cart)
+                <!-- Cartbox Single Item -->
+                <div class="cartbox__item">
+                    <div class="cartbox__item__thumb">
+                        <a href="/product_detail/{{$cart->product_id}}">
+                            <img src="/template_ver2.0/images/menu-list/{{$cart->img}}" alt="small thumbnail">
                         </a>
                     </div>
-                    <div class="col-lg-6">
-                        <a href="img/g5.jpg" class="img-pop-home">
-                            <img class="img-fluid" src="img/g5.jpg" alt="">
-                        </a>
+                    <div class="cartbox__item__content">
+                        <h5><a href="product-details.html" class="product-name">{{$cart->product_name}}</a></h5>
+                        <p><span>{{$cart->quantity}}</span>x<span>{{$cart->price}}</span></p>
+                        <span class="price">{{$cart->sum}}</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End gallery Area -->
+                    <button class="cartbox__item__remove">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </div><!-- //Cartbox Single Item -->
+                @endforeach
 
-<!-- Start review Area -->
-<section class="review-area section-gap" id="review">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-60 col-lg-10">
-                <div class="title text-center">
-                    <h1 class="mb-10">What kind of Coffee we serve for you</h1>
-                    <p>Who are in extremely love with eco friendly system.</p>
-                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 single-review">
-                <img src="img/r1.png" alt="">
-                <div class="title d-flex flex-row">
-                    <h4>lorem ipusm</h4>
-                    <div class="star">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                </div>
-                <p>
-                    Accessories Here you can find the best computer accessory for your laptop, monitor, printer,
-                    scanner, speaker. Here you can find the best computer accessory for your laptop, monitor,
-                    printer, scanner, speaker.
-                </p>
+            <div class="cartbox__total">
+                <ul>
+                    <li><span class="cartbox__total__title">Subtotal</span><span class="price">$70</span></li>
+                    <li class="shipping-charge"><span class="cartbox__total__title">Shipping Charge</span><span
+                            class="price">$05</span></li>
+                    <li class="grandtotal">Total<span class="price">$75</span></li>
+                </ul>
             </div>
-            <div class="col-lg-6 col-md-6 single-review">
-                <img src="img/r2.png" alt="">
-                <div class="title d-flex flex-row">
-                    <h4>lorem ipusm</h4>
-                    <div class="star">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                </div>
-                <p>
-                    Accessories Here you can find the best computer accessory for your laptop, monitor, printer,
-                    scanner, speaker. Here you can find the best computer accessory for your laptop, monitor,
-                    printer, scanner, speaker.
-                </p>
-            </div>
-        </div>
-        <div class="row counter-row">
-            <div class="col-lg-3 col-md-6 single-counter">
-                <h1 class="counter">2536</h1>
-                <p>Happy Client</p>
-            </div>
-            <div class="col-lg-3 col-md-6 single-counter">
-                <h1 class="counter">7562</h1>
-                <p>Total Projects</p>
-            </div>
-            <div class="col-lg-3 col-md-6 single-counter">
-                <h1 class="counter">2013</h1>
-                <p>Cups Coffee</p>
-            </div>
-            <div class="col-lg-3 col-md-6 single-counter">
-                <h1 class="counter">10536</h1>
-                <p>Total Submitted</p>
+            <div class="cartbox__buttons">
+                <a class="food__btn" href="cart.html"><span>View cart</span></a>
+                <a class="food__btn" href="checkout.html"><span>Checkout</span></a>
             </div>
         </div>
     </div>
-</section>
-<!-- End review Area -->
+</div><!-- //Cartbox -->
 
-<!-- Start blog Area -->
-<section class="blog-area section-gap" id="blog">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-60 col-lg-10">
-                <div class="title text-center">
-                    <h1 class="mb-10">What kind of Coffee we serve for you</h1>
-                    <p>Who are in extremely love with eco friendly system.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 single-blog">
-                <img class="img-fluid" src="img/b1.jpg" alt="">
-                <ul class="post-tags">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Life Style</a></li>
-                </ul>
-                <a href="#">
-                    <h4>Portable latest Fashion for young women</h4>
-                </a>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore.
-                </p>
-                <p class="post-date">
-                    31st January, 2018
-                </p>
-            </div>
-            <div class="col-lg-6 col-md-6 single-blog">
-                <img class="img-fluid" src="img/b2.jpg" alt="">
-                <ul class="post-tags">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Life Style</a></li>
-                </ul>
-                <a href="#">
-                    <h4>Portable latest Fashion for young women</h4>
-                </a>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore.
-                </p>
-                <p class="post-date">
-                    31st January, 2018
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End blog Area -->
-<script src="js/vendor/jquery-2.2.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-</script>
-<script src="js/vendor/bootstrap.min.js"></script>
-<script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-<script src="js/easing.min.js"></script>
-<script src="js/hoverIntent.js"></script>
-<script src="js/superfish.min.js"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
-<script src="js/parallax.min.js"></script>
-<script src="js/waypoints.min.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
-<script src="js/mail-script.js"></script>
-<script src="js/main.js"></script>
 @endsection

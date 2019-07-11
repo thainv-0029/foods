@@ -1,126 +1,152 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!doctype html>
+<html class="no-js" lang="zxx">
 
 <head>
-    <!-- Mobile Specific Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Author Meta -->
-    <meta name="author" content="codepixer">
-    <!-- Meta Description -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Menu-List || Aahar Food Delivery Html5 Template</title>
     <meta name="description" content="">
-    <!-- Meta Keyword -->
-    <meta name="keywords" content="">
-    <!-- meta character set -->
-    <meta charset="UTF-8">
-    <!-- Site Title -->
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-    <!--
-                    CSS
-                    ============================================= -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="img/logo.png" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="Login_v5/vendor/bootstrap/css/bootstrap.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="Login_v5/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="Login_v5/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="Login_v5/vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="Login_v5/vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="Login_v5/vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="Login_v5/vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="Login_v5/vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="Login_v5/css/util.css">
-    <link rel="stylesheet" type="text/css" href="Login_v5/css/main.css">
-    <!--===============================================================================================-->
 
-    <title>Fast food</title>
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/template_ver2.0/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/template_ver2.0/images/icon.png">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-    <!--
-    CSS
-    ============================================= -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/template_ver2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/template_ver2.0/css/plugins.css">
+    <link rel="stylesheet" href="/template_ver2.0/style.css">
 
-    <link rel="stylesheet" href="css/linearicons.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <link rel="stylesheet" href="css/custom.css">
-
+    <!-- Cusom css -->
+    <link rel="stylesheet" href="/template_ver2.0/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Modernizer js -->
+    <script src="template_ver2.0/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 
 <body>
-    <div id="app">
-    <header id="header" id="home">
-        <div class="container">
-            <div class="row align-items-center justify-content-between d-flex">
-                <div id="logo">
-                    <a href="index.html"><img style="width:30%;height:30px" src="img/logo.png" alt="" title="" /></a>
-                </div>
-                <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                        <li class="menu-active"><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#coffee">Coffee</a></li>
-                        <li><a href="#review">Review</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li>
-                            <!-- Authentication Links -->
-                            @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                        @endif
-                        @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
+    <!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+    <!-- Add your site or application content here -->
+
+    <!-- <div class="fakeloader"></div> -->
+
+    <!-- Main wrapper -->
+    <div class="wrapper" id="wrapper">
+        <!-- Start Header Area -->
+        <header class="htc__header bg--white">
+            <!-- Start Mainmenu Area -->
+            <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-4 col-md-6 order-1 order-lg-1">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img style="width:120px" src="/template_ver2.0/images/logo/foody.png"
+                                        alt="logo images">
                                 </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
                             </div>
-                        </li>
-                        @endguest
-                        </li>
-                    </ul>
-                </nav><!-- #nav-menu-container -->
-            </div>
-        </div>
-    </header><!-- #header -->
+                        </div>
+                        <div class="col-lg-9 col-sm-4 col-md-2 order-3 order-lg-2">
+                            <div class="main__menu__wrap">
+                                <nav class="main__menu__nav d-none d-lg-block">
+                                    <ul class="mainmenu">
+                                        <li class="drop"><a href="index.html"><i class="zmdi zmdi-home"></i> Home</a>
+                                            <ul class="dropdown__menu">
+                                                <li><a href="index.html">Home Food Delivery</a></li>
+                                                <li><a href="index-2.html">Home Pizza Delivery</a></li>
+                                                <li><a href="index-3.html">Home Backery Delivery</a></li>
+                                                <li><a href="index-4.html">Home Box Layout</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="drop"><a href="menu-grid.html"><i class="zmdi zmdi-menu"></i>
+                                                Menu</a>
+                                            <ul class="dropdown__menu">
+                                                <li><a href="menu-grid.html">Menu Grid</a></li>
+                                                <li><a href="menu-list.html">Menu List</a></li>
+                                                <li><a href="menu-details.html">Menu Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="drop"><a href="blog-list.html"><i class="zmdi zmdi-blogger"></i>
+                                                Blog</a>
+                                            <ul class="dropdown__menu">
+                                                <li><a href="blog-list.html">Blog List</a></li>
+                                                <li><a href="blog-mesonry.html">Blog mesonry</a></li>
+                                                <li><a href="blog-grid-left-sidebar.html">Blog Grid</a></li>
+                                                <li><a href="blog-list-right-sidebar.html">Blog List with right
+                                                        sidebar</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="drop"><a href="#"><i class="zmdi zmdi-pages"></i> Pages</a>
+                                            <ul class="dropdown__menu">
+                                                <li><a href="service.html">Service</a></li>
+                                                <li><a href="cart.html">Cart Page</a></li>
+                                                <li><a href="checkout.html">Checkout Page</a></li>
+                                                <li><a href="contact.html">Contact Page</a></li>
+                                            </ul>
+                                        </li>
+                                        @if(Auth::user()->hasRole('admin'))
+                                        <li><a href="{{route('admin')}}">Admin Page</a></li>
+                                        @else
+                                        <li class="drop"><a href="#"><i class="zmdi zmdi-account-o"></i> Account</a>
+                                            <ul class="dropdown__menu">
+                                                <li><a href="service.html">Profile</a></li>
+                                                <li><a href="cart.html">History</a></li>
+                                            </ul>
+                                        </li>
+                                        @endif
 
-    <main class="py-4">
+                                    </ul>
+                                </nav>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
+                            <div class="header__right d-flex justify-content-end">
+                                <div class="log__in">
+                                    @guest
+                                    <a href="#"> Login </a>
+                                    <a href="#"> Register </a>
+                                    @else
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                                            class="zmdi zmdi-directions-run"></i>Logout</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
+                                    @endguest
+                                </div>
+                                <div class="shopping__cart">
+                                    <a class="minicart-trigger" href="#"><i class="zmdi zmdi-shopping-basket"></i></a>
+                                    <div class="shop__qun">
+                                        <span>{{$count}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="mobile-menu d-block d-lg-none"></div>
+                    <!-- Mobile Menu -->
+                </div>
+            </div>
+            <!-- End Mainmenu Area -->
+        </header>
+        <!-- End Header Area -->
         @yield('content')
-    </main>
+    </div><!-- //Main wrapper -->
     @extends('layouts.footer')
-    </div>
+    <!-- JS Files -->
+    <script src="template_ver2.0/js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="template_ver2.0/js/popper.min.js"></script>
+    <script src="template_ver2.0/js/bootstrap.min.js"></script>
+    <script src="template_ver2.0/js/plugins.js"></script>
+    <script src="template_ver2.0/js/active.js"></script>
 </body>
 
 </html>

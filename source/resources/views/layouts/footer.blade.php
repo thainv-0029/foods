@@ -1,59 +1,152 @@
-<!-- start footer Area -->
-<footer class="footer-area section-gap">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-md-6 col-sm-6">
-                <div class="single-footer-widget">
-                    <h6>About Us</h6>
-                    <p style="color:white">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore dolore magna aliqua.
-                    </p>
-                    <p class="footer-text" style="color:white">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>
-                            document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-5  col-md-6 col-sm-6">
-                <div class="single-footer-widget">
-                    <h6>Newsletter</h6>
-                    <p style="color:white">Stay update with our latest</p>
-                    <div class="" id="mc_embed_signup">
-                        <form target="_blank" novalidate="true"
-                            action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                            method="get" class="form-inline">
-                            <input class="form-control" name="EMAIL" placeholder="Enter Email"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required=""
-                                type="email">
-                            <button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right"
-                                    aria-hidden="true"></i></button>
-                            <div style="position: absolute; left: -5000px;">
-                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+<!-- Start Footer Area -->
+<footer class="footer__area footer--1">
+    <div class="footer__wrapper bg__cat--1 section-padding--lg">
+        <div class="container">
+            <div class="row">
+                <!-- Start Single Footer -->
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                    <div class="footer">
+                        <h2 class="ftr__title">About Aahar</h2>
+                        <div class="footer__inner">
+                            <div class="ftr__details">
+                                <p>Lorem ipsum dolor sit amconsectetur adipisicing elit,</p>
+                                <div class="ftr__address__inner">
+                                    <div class="ftr__address">
+                                        <div class="ftr__address__icon">
+                                            <i class="zmdi zmdi-home"></i>
+                                        </div>
+                                        <div class="frt__address__details">
+                                            <p>Elizabeth Tower. 6th Floor Medtown, New York</p>
+                                        </div>
+                                    </div>
+                                    <div class="ftr__address">
+                                        <div class="ftr__address__icon">
+                                            <i class="zmdi zmdi-phone"></i>
+                                        </div>
+                                        <div class="frt__address__details">
+                                            <p><a href="#">+088 01673-453290</a></p>
+                                            <p><a href="#">+088 01773-458290</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="ftr__address">
+                                        <div class="ftr__address__icon">
+                                            <i class="zmdi zmdi-email"></i>
+                                        </div>
+                                        <div class="frt__address__details">
+                                            <p><a href="#">Aahardelivery@email.com</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="social__icon">
+                                    <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-rss"></i></a></li>
+                                </ul>
                             </div>
-
-                            <div class="info pt-20"></div>
-                        </form>
+                        </div>
                     </div>
                 </div>
+                <!-- End Single Footer -->
+                <!-- Start Single Footer -->
+                <div class="col-md-6 col-lg-3 col-sm-12 sm--mt--40">
+                    <div class="footer gallery">
+                        <h2 class="ftr__title">Our Gallery</h2>
+                        <div class="footer__inner">
+                            <ul class="sm__gallery__list">
+                                <li><a href="#"><img src="/template_ver2.0/images/gallery/sm-img/1.jpg" alt="gallery images"></a></li>
+                                <li><a href="#"><img src="/template_ver2.0/images/gallery/sm-img/2.jpg" alt="gallery images"></a></li>
+                                <li><a href="#"><img src="/template_ver2.0/images/gallery/sm-img/3.jpg" alt="gallery images"></a></li>
+                                <li><a href="#"><img src="/template_ver2.0/images/gallery/sm-img/4.jpg" alt="gallery images"></a></li>
+                                <li><a href="#"><img src="/template_ver2.0/images/gallery/sm-img/5.jpg" alt="gallery images"></a></li>
+                                <li><a href="#"><img src="/template_ver2.0/images/gallery/sm-img/6.jpg" alt="gallery images"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Footer -->
+                <!-- Start Single Footer -->
+                <div class="col-md-6 col-lg-3 col-sm-12 md--mt--40 sm--mt--40">
+                    <div class="footer">
+                        <h2 class="ftr__title">Opening Time</h2>
+                        <div class="footer__inner">
+                            <ul class="opening__time__list">
+                                <li>Saturday<span>.......</span>9am to 11pm</li>
+                                <li>Sunday<span>.......</span>9am to 11pm</li>
+                                <li>Monday<span>.......</span>9am to 11pm</li>
+                                <li>Tuesday<span>.......</span>9am to 11pm</li>
+                                <li>Wednesday<span>.......</span>9am to 11pm</li>
+                                <li>Thursday<span>.......</span>9am to 11pm</li>
+                                <li>Friday<span>.......</span>9am to 11pm</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Footer -->
+                <!-- Start Single Footer -->
+                <div class="col-md-6 col-lg-3 col-sm-12 md--mt--40 sm--mt--40">
+                    <div class="footer">
+                        <h2 class="ftr__title">Latest Post</h2>
+                        <div class="footer__inner">
+                            <div class="lst__post__list">
+                                <div class="single__sm__post">
+                                    <div class="sin__post__thumb">
+                                        <a href="blog-details,html">
+                                            <img src="/template_ver2.0/images/blog/sm-img/1.jpg" alt="blog images">
+                                        </a>
+                                    </div>
+                                    <div class="sin__post__details">
+                                        <h6><a href="blog-details.html">Chicken Shawarma </a></h6>
+                                        <p>Lordo loram consecte turadip isicing</p>
+                                    </div>
+                                </div>
+                                <div class="single__sm__post">
+                                    <div class="sin__post__thumb">
+                                        <a href="blog-details,html">
+                                            <img src="/template_ver2.0/images/blog/sm-img/2.jpg" alt="blog images">
+                                        </a>
+                                    </div>
+                                    <div class="sin__post__details">
+                                        <h6><a href="blog-details.html">Fruits Desert</a></h6>
+                                        <p>Lordo loramcon secte turadipi sicing</p>
+                                    </div>
+                                </div>
+                                <div class="single__sm__post">
+                                    <div class="sin__post__thumb">
+                                        <a href="blog-details,html">
+                                            <img src="/template_ver2.0/images/blog/sm-img/3.jpg" alt="blog images">
+                                        </a>
+                                    </div>
+                                    <div class="sin__post__details">
+                                        <h6><a href="blog-details.html">Vanilla Pastry</a></h6>
+                                        <p>Lordo loramcon secte turadip isicing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Footer -->
             </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
-                <div class="single-footer-widget">
-                    <h6>Follow Us</h6>
-                    <p style="color:white">Let us be social</p>
-                    <div class="footer-social d-flex align-items-center">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
+        </div>
+    </div>
+    <div class="copyright bg--theme">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="copyright__inner">
+                        <div class="cpy__right--left">
+                            <p>@All Right Reserved.<a href="https://devitems.com">Devitems</a></p>
+                        </div>
+                        <div class="cpy__right--right">
+                            <a href="#">
+                                <img src="/template_ver2.0/images/icon/shape/2.png" alt="payment images">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-<!-- End footer Area -->
+<!-- End Footer Area -->

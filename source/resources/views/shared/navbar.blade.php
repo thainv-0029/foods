@@ -33,13 +33,15 @@
                                     <h2 style="text-align: center">Your Cart</h2>
                                     <table class="table">
                                         <tbody>
+                                            @foreach($carts as $cart)
                                             <tr>
                                                 <td><img style="width:60px;height:60px" src="/img/categories/ff3.jpg">
                                                 </td>
-                                                <td>Name product x 2</td>
-                                                <td>46 $</td>
+                                                <td>{{$cart->product_name}} x {{$cart->quantity}}</td>
+                                                <td>{{$cart->price}} $</td>
+                                                <td>{{$cart->price}} $</td>
                                             </tr>
-
+                                            @endforeach
                                             <tr>
                                                 <td><img style="width:60px;height:60px"
                                                         src="/img/categories/pizza-1-1.jpg">

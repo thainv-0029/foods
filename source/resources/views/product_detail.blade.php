@@ -39,6 +39,8 @@
                                                         value="1">
                                                     <input class="cart-plus-minus-box" type="text" name="user_id"
                                                         value="{{Auth::user()->id}}" hidden>
+                                                    <input class="cart-plus-minus-box" type="text" name="img"
+                                                        value="{{$detail->img}}" hidden>
                                                     <input class="cart-plus-minus-box" type="text" name="product_id"
                                                         value="{{$detail->id}}" hidden>
                                                     <input class="cart-plus-minus-box" type="text" name="product_name"

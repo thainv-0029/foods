@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\Category;
 
 class ProductController extends Controller
 {
@@ -80,5 +82,11 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function detail($id){
+        $detail = Product::where('id','=',$id)->first();
+        $category = Category::where('id','=', $detail->category_id)->first();
+        return view('product_detail',compact('detail','category'));
     }
 }

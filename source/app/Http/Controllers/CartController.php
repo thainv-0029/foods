@@ -16,8 +16,8 @@ class CartController extends Controller
     {
         //
     }
-
-    /**
+   
+    /*
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -40,6 +40,10 @@ class CartController extends Controller
         $cart->user_id = $request->user_id;
         $cart->product_id = $request->product_id;
         $cart->quantity = $request->quantity;
+        $cart->product_name = $request->product_name;
+        $cart->img = $request->img;
+        $cart->price = $request->price;
+        $cart->sum = $request->quantity * $request->price;
     
         $cart->save();
 

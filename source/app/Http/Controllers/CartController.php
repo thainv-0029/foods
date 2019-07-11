@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cart;
+use Cart;
 
 class CartController extends Controller
 {
@@ -16,15 +16,26 @@ class CartController extends Controller
     {
         //
     }
-
-    /**
+   
+    /*
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */ 
-    public function create()
+    public function create(Request $request)
     {
-        //
+        Cart::add([
+            'id'    =>  $request->id,
+            'name'  =>  $request->name,
+            'qty'   =>  $request->qty,
+            'price' =>  $request->price,
+            'weight'=>  '1.0',
+            'options' => ['img' => $request->img]
+        ]);
+
+        $cart = Cart::content();
+        
+        return redirect('/');
     }
 
     /**
@@ -35,15 +46,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $cart = new Cart();
-
-        $cart->user_id = $request->user_id;
-        $cart->product_id = $request->product_id;
-        $cart->quantity = $request->quantity;
-    
-        $cart->save();
-
-        return redirect('/home');
+        //
     }
 
     /**
@@ -52,9 +55,10 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $carts = Cart::content();
+        return view ('cart',compact('carts'));
     }
 
     /**
@@ -86,8 +90,9 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        Cart::destroy();
+        return redirect('cart');
     }
 }

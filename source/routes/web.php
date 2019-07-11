@@ -24,13 +24,14 @@ Route::group(
     array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'),
     function () {
         Route::get('users', [
-            'as' => 'admin.user.index', 'uses' => 'UsersController@index'
+            'as' => 'admin.user.index', 'uses' => 'UserController@index'
         ]);
-        Route::get('roles', 'RolesController@index');
-        Route::get('roles/create', 'RolesController@create')->name('roles.create');
-        Route::post('roles/create', 'RolesController@store');
-        Route::get('users/{id?}/edit', 'UsersController@edit');
-        Route::post('users/{id?}/edit', 'UsersController@update');
-        Route::get('/', 'AdminPagesController@home')->name('admin');
+        Route::get('roles', 'RoleController@index');
+        Route::get('roles/create', 'RoleController@create')->name('roles.create');
+        Route::post('roles/create', 'RoleController@store');
+        Route::get('users/{id?}/edit', 'UserController@edit');
+        Route::post('users/{id?}/edit', 'UserController@update');
+        Route::get('/', 'AdminPageController@home')->name('admin');
+        Route::get('products', 'ProductController@index');
     }
 );

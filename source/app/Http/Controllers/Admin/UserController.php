@@ -9,7 +9,7 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserUpdateRequest;
 
-class UsersController extends Controller
+class UserController extends Controller
 {
     //
     public function index()
@@ -41,6 +41,6 @@ class UsersController extends Controller
         }
         $user->save();
         $user->syncRoles($request->get('role'));
-        return redirect(action('Admin\UsersController@edit', $user->id))->with('status', 'The User has been updated!');
+        return redirect(action('Admin\UserController@edit', $user->id))->with('status', 'The User has been updated!');
     }
 }

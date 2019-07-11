@@ -6,7 +6,7 @@
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
-                <h1>Dashboard</h1>
+                <h1>Products</h1>
             </div>
         </div>
     </div>
@@ -15,8 +15,8 @@
             <div class="page-title">
                 <ol class="breadcrumb text-right">
                     <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Table</a></li>
-                    <li class="active">Data table</li>
+                    <li><a href="#">Products</a></li>
+                    <li class="active">List</li>
                 </ol>
             </div>
         </div>
@@ -38,19 +38,27 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Joined at</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Image</th>
+                                    <th>Quantity</th>
+                                    <th>Create at</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $user)
+                                @foreach ($products as $product)
                                 <tr>
-                                    <td>{!! $user->id !!}</td>
+                                    <td>{!! $product->id !!}</td>
                                     <td>
-                                        <a href="{!! action('Admin\UserController@edit', $user->id) !!}">{!! $user->name !!}
+                                        <a href="{!! action('Admin\UsersController@edit', $product->id) !!}">{!! $product->name !!}
                                         </a>
                                     </td>
-                                    <td>{!! $user->email !!}</td>
+                                    <td>{!! $user->category_id !!}</td>
+                                    <td>{!! $product->description !!}</td>
+                                    <td>{!! $product->price !!}</td>
+                                    <td>{!! $product->img !!}</td>
+                                    <td>{{ __('None') }}</td>
                                     <td>{!! $user->created_at !!}</td>
                                 </tr>
                                 @endforeach

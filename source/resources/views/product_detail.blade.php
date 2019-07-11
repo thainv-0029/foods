@@ -36,7 +36,7 @@
                                             <div class="product-quantity">
                                                 <div class="cart-plus-minus">
                                                     <input class="cart-plus-minus-box" type="number" name="qty"
-                                                        value="1">
+                                                        value="1" min="1">
                                                     <input class="cart-plus-minus-box" type="text" name="img"
                                                         value="{!!$detail->img!!}" hidden>
                                                     <input class="cart-plus-minus-box" type="text" name="id"
@@ -61,5 +61,6 @@
         </div>
     </div>
 </section>
+
 <!-- End Blog List View Area -->
 @endsection

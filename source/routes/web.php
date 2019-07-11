@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/cart', 'CartController@create');
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/cart', 'CartController@show');
 Route::post('/cart', 'CartController@create')->name('addcart');
 Route::get('/products/detail/{id?}','ProductController@detail');
+Route::get('/order','OrderController@checkout');
+Route::get('/cart/destroy','CartController@destroy')->name('destroyCart');
 
 Route::group(
     array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'),

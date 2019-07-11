@@ -35,7 +35,7 @@ class CartController extends Controller
 
         $cart = Cart::content();
         
-        return redirect('home');
+        return redirect('/');
     }
 
     /**
@@ -55,9 +55,10 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $carts = Cart::content();
+        return view ('cart',compact('carts'));
     }
 
     /**
@@ -89,8 +90,9 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        Cart::destroy();
+        return redirect('cart');
     }
 }

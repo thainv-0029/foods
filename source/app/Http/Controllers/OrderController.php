@@ -16,6 +16,10 @@ class OrderController extends Controller
         //
     }
 
+    public function checkout(){
+        return view ('checkout');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

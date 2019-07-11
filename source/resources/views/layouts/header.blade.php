@@ -138,7 +138,52 @@
             <!-- End Mainmenu Area -->
         </header>
         <!-- End Header Area -->
+        
         @yield('content')
+        <!-- Cartbox -->
+        <div class="cartbox-wrap">
+            <div class="cartbox text-right">
+                <button class="cartbox-close"><i class="zmdi zmdi-close"></i></button>
+                <div class="cartbox__inner text-left">
+
+                    <div class="cartbox__items">
+
+
+                        @foreach(Cart::content() as $item)
+                        <!-- Cartbox Single Item -->
+                        <div class="cartbox__item">
+                            <div class="cartbox__item__thumb">
+                                <a href="/product_detail/3">
+                                    <img src="/template_ver2.0/images/menu-list/{!!$item->options->img!!}"
+                                        alt="/template_ver2.0/images/menu-list/{!!$item->options->img!!}">
+                                </a>
+                            </div>
+                            <div class="cartbox__item__content">
+                                <h5><a href="product-details.html" class="product-name">{!!$item->name!!}</a></h5>
+                                <p><span>{!!$item->quantity!!}</span>x<span>{!!$item->price!!} $</span></p>
+                                <span class="price">{!!$item->qty!!} $</span>
+                            </div>
+                            <button class="cartbox__item__remove">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div><!-- //Cartbox Single Item -->
+                        @endforeach
+
+
+
+                    </div>
+                    <div class="cartbox__total">
+                        <ul>
+                            <li class="grandtotal">Total<span class="price">{!!Cart::subtotal()!!} $</span></li>
+                        </ul>
+                    </div>
+                    <div class="cartbox__buttons">
+                        {{-- <a class="food__btn" href="cart.html"><span>View cart</span></a> --}}
+                        <a class="food__btn" href="/cart"><span>Checkout</span></a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- //Cartbox -->
     </div><!-- //Main wrapper -->
     @extends('layouts.footer')
     <!-- JS Files -->

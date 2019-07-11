@@ -31,8 +31,6 @@ $(document).ready(function(){
     });
 
 
-
-
     $('.play-btn').magnificPopup({
         type: 'iframe',
         mainClass: 'mfp-fade',

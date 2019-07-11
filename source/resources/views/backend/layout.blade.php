@@ -9,8 +9,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <title>Admin pages</title>
+    {{-- <meta name="description" content="Sufee Admin - HTML5 Admin Template"> --}}
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -22,8 +22,10 @@
     <link rel="stylesheet" href="{{ asset('admin_pages_assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin_pages_assets/vendors/selectFX/css/cs-skin-elastic.css') }}">
     <link rel="stylesheet" href="{{ asset('admin_pages_assets/vendors/jqvmap/dist/jqvmap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin_pages_assets/vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin_pages_assets/vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('admin_pages_assets/vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('admin_pages_assets/vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}">
 
 
 
@@ -54,13 +56,16 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{ route('admin') }}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">Users Manage</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
-                        <ul class="sub-menu children dropdown-menu">
+                        <a href="{{ route('users') }}" 
+                            {{-- class="dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" --}}
+                            >
+                            <i class="menu-icon fa fa-laptop"></i>Users</a>
+                        {{-- <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
                             <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
@@ -73,41 +78,46 @@
                             <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
                             <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
                             <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
-                        </ul>
+                        </ul> --}}
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
+                        <a href="{{ route('roles') }}" 
+                        {{-- class="dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" --}}
+                            > <i class="menu-icon fa fa-table"></i>Roles</a>
+                        {{-- <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
                             <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                        </ul>
+                        </ul> --}}
                     </li>
-                    <li class="menu-item-has-children dropdown">
+                    {{-- <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
 
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                    <h3 class="menu-title">Products</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
-                        <ul class="sub-menu children dropdown-menu">
+                        <a href="{{ route('categories') }}" 
+                        {{-- class="dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" --}}
+                            > <i
+                                class="menu-icon fa fa-tasks"></i>Categories</a>
+                        {{-- <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font
                                     Awesome</a></li>
                             <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </li>
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
+                        <a href="{{ route('products') }}"> <i class="menu-icon ti-email"></i>Products</a>
                     </li>
-                    <li class="menu-item-has-children dropdown">
+                    {{-- <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -117,9 +127,9 @@
                             <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
-                    <li class="menu-item-has-children dropdown">
+                    {{-- <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -127,8 +137,8 @@
                             <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a>
                             </li>
                         </ul>
-                    </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    </li> --}}
+                    {{-- <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
@@ -138,7 +148,7 @@
                             <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -693,34 +703,44 @@
 
         <!-- Right Panel -->
         {{-- <script src="{{ asset('js/jquery.dataTables.min.js') }}"><sscript> --}}
-        <script src="{{ asset('admin_pages_assets/vendors/jquery/dist/jquery.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/popper.js/dist/umd/popper.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/assets/js/main.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/vendors/jquery/dist/jquery.min.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/vendors/popper.js/dist/umd/popper.min.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/assets/js/main.js') }}"></script>
+            {{-- <script src="{{ asset('js/custom.js') }}"></script> --}}
 
 
-        <script src="{{ asset('admin_pages_assets/vendors/chart.js/dist/Chart.bundle.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/assets/js/dashboard.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/assets/js/widgets.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/jqvmap/dist/jquery.vmap.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>    
-    
-        <script src="{{ asset('admin_pages_assets/vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/jszip/dist/jszip.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/pdfmake/build/pdfmake.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/pdfmake/build/vfs_fonts.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/vendors/datatables.net-buttons/js/buttons.colVis.min.js') }}"></script>
-        <script src="{{ asset('admin_pages_assets/assets/js/init-scripts/data-table/datatables-init.js') }}"></script>
-    
-    
-        <script>
-            (function($) {
+            <script src="{{ asset('admin_pages_assets/vendors/chart.js/dist/Chart.bundle.min.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/assets/js/dashboard.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/assets/js/widgets.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/vendors/jqvmap/dist/jquery.vmap.min.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}">
+            </script>
+            <script src="{{ asset('admin_pages_assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+
+            <script src="{{ asset('admin_pages_assets/vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}">
+            </script>
+            <script src="{{ asset('admin_pages_assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js') }}">
+            </script>
+            <script
+                src="{{ asset('admin_pages_assets/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js') }}">
+            </script>
+            <script src="{{ asset('admin_pages_assets/vendors/jszip/dist/jszip.min.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/vendors/pdfmake/build/pdfmake.min.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/vendors/pdfmake/build/vfs_fonts.js') }}"></script>
+            <script src="{{ asset('admin_pages_assets/vendors/datatables.net-buttons/js/buttons.html5.min.js') }}">
+            </script>
+            <script src="{{ asset('admin_pages_assets/vendors/datatables.net-buttons/js/buttons.print.min.js') }}">
+            </script>
+            <script src="{{ asset('admin_pages_assets/vendors/datatables.net-buttons/js/buttons.colVis.min.js') }}">
+            </script>
+            <script src="{{ asset('admin_pages_assets/assets/js/init-scripts/data-table/datatables-init.js') }}">
+            </script>
+
+
+            <script>
+                (function($) {
             "use strict";
 
             jQuery('#vmap').vectorMap({
@@ -736,7 +756,9 @@
                 normalizeFunction: 'polynomial'
             });
         })(jQuery);
-        </script>
+            </script>
+
+
 
 </body>
 

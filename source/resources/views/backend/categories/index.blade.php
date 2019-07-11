@@ -6,7 +6,7 @@
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
-                <h1>Dashboard</h1>
+                <h1>Products</h1>
             </div>
         </div>
     </div>
@@ -15,8 +15,8 @@
             <div class="page-title">
                 <ol class="breadcrumb text-right">
                     <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Table</a></li>
-                    <li class="active">Data table</li>
+                    <li><a href="#">Products</a></li>
+                    <li class="active">List</li>
                 </ol>
             </div>
         </div>
@@ -38,30 +38,37 @@
                                 {{	session('status')	}}
                             </div>
                             @endif
+                            <a href="{{ route('categories.create') }}" class="btn btn-success btn-create">
+                                <i class="fa fa fa-plus-circle"></i>
+                                {{ __('Add new category') }}
+                            </a>
     
-                            @if ($users->isEmpty())
-                            <p> {{ __('There is no user.') }}</p>
+                            @if ($categories->isEmpty())
+                            <p> {{ __('There is no category.') }}</p>
                             @else
-            
+    
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Joined at</th>
+                                    <th>Create at</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $user)
+                                @foreach ($categories as $category)
                                 <tr>
-                                    <td>{!! $user->id !!}</td>
+                                    <td>{!! $category->id !!}</td>
                                     <td>
-                                        <a href="{!! action('Admin\UserController@edit', $user->id) !!}">{!! $user->name !!}
+                                        <a href="{!! action('Admin\UserController@edit', $category->id) !!}">{!! $category->category_des !!}
                                         </a>
                                     </td>
-                                    <td>{!! $user->email !!}</td>
-                                    <td>{!! $user->created_at !!}</td>
+                                    {{-- <td>{!! $user->category_id !!}</td>
+                                    <td>{!! $product->description !!}</td>
+                                    <td>{!! $product->price !!}</td>
+                                    <td>{!! $product->img !!}</td>
+                                    <td>{{ __('None') }}</td> --}}
+                                    <td>{!! $category->created_at !!}</td>
                                 </tr>
                                 @endforeach
 

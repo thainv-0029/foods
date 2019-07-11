@@ -33,6 +33,20 @@
                         <strong class="card-title">Data Table</strong>
                     </div>
                     <div class="card-body">
+                        @if (session('status'))
+                        <div class="alert	alert-success">
+                            {{	session('status')	}}
+                        </div>
+                        @endif
+                        <a href="{{ route('products.create') }}" class="btn btn-success btn-create">
+                            <i class="fa fa fa-plus-circle"></i>
+                            {{ __('Add new product') }}
+                        </a>
+
+                        @if ($products->isEmpty())
+                        <p> {{ __('There is no product.') }}</p>
+                        @else
+
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
@@ -43,7 +57,8 @@
                                     <th>Price</th>
                                     <th>Image</th>
                                     <th>Quantity</th>
-                                    <th>Create at</th>
+                                    {{-- <th>Create at</th> --}}
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,15 +66,30 @@
                                 <tr>
                                     <td>{!! $product->id !!}</td>
                                     <td>
-                                        <a href="{!! action('Admin\UsersController@edit', $product->id) !!}">{!! $product->name !!}
-                                        </a>
+                                        {!!
+                                        $product->name !!}
                                     </td>
-                                    <td>{!! $user->category_id !!}</td>
+                                    <td>
+                                        @foreach ($categories as $category)
+                                        @if($product->category_id == $category->id)
+                                        {{ $category->category_des }}
+                                        @endif
+                                        @endforeach
+                                    </td>
                                     <td>{!! $product->description !!}</td>
                                     <td>{!! $product->price !!}</td>
-                                    <td>{!! $product->img !!}</td>
-                                    <td>{{ __('None') }}</td>
-                                    <td>{!! $user->created_at !!}</td>
+                                    {{-- <td>{!! $product->img !!}</td> --}}
+                                    <td><img src="{{ asset('storage/img/upload/'.$product->img) }}"/></td>
+                                    <td>{{ __('Updating') }}</td>
+                                    {{-- <td>{!! $product->created_at !!}</td> --}}
+                                    <td>
+                                        <a href="{!! action('Admin\ProductController@edit', $product->id) !!}">
+                                            <i class="fa fa fa-edit" style="color:green;font-size: 20px;margin-left:20px"></i>
+                                        </a>
+                                        <a href="{!! action('Admin\ProductController@delete', $product->id) !!}">
+                                            <i class="fa fa fa-trash" style="cursor: pointer;color: red; font-size: 20px;margin-left:20px"></i>
+                                        </a>
+                                    </td>
                                 </tr>
                                 @endforeach
 
@@ -72,6 +102,8 @@
 
         </div>
     </div><!-- .animated -->
+    @endif
+
 </div><!-- .content -->
 </div>
 @endsection

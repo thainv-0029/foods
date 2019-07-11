@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Category;
+
+class CategoryController extends Controller
+{
+    //
+    public function index() {
+        $categories = Category::all();
+        return view('backend.categories.index', compact('categories'));
+    }
+
+    public function create() {
+        return view('backend.categories.create');
+    }
+
+    public function store(Request $request) {
+        Category::create(['category_des' => $request->get('category_des')]);
+        return redirect('admin/categories/create')->with('status', 'A new category created!');
+    }
+}

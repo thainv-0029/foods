@@ -23,15 +23,22 @@ Route::get('/cart/destroy','CartController@destroy')->name('destroyCart');
 Route::group(
     array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'),
     function () {
-        Route::get('users', [
-            'as' => 'admin.user.index', 'uses' => 'UserController@index'
-        ]);
-        Route::get('roles', 'RoleController@index');
+        Route::get('users', 'UserController@index')->name('users');
+        Route::get('roles', 'RoleController@index')->name('roles');
         Route::get('roles/create', 'RoleController@create')->name('roles.create');
         Route::post('roles/create', 'RoleController@store');
         Route::get('users/{id?}/edit', 'UserController@edit');
         Route::post('users/{id?}/edit', 'UserController@update');
         Route::get('/', 'AdminPageController@home')->name('admin');
-        Route::get('products', 'ProductController@index');
+        Route::get('products', 'ProductController@index')->name('products');
+        Route::get('products/create', 'ProductController@create')->name('products.create');
+        Route::post('products/create', 'ProductController@store');
+        Route::get('products/{id?}/edit', 'ProductController@edit');
+        Route::post('products/{id?}/edit', 'ProductController@update');
+        Route::get('products/{id?}/delete', 'ProductController@delete');
+        Route::get('categories', 'CategoryController@index')->name('categories');
+        Route::get('categories/create', 'CategoryController@create')->name('categories.create');
+        Route::post('categories/create', 'CategoryController@store');
+
     }
 );

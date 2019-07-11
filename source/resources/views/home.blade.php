@@ -180,8 +180,8 @@
                     </div>
                     <div class="cartbox__item__content">
                         <h5><a href="product-details.html" class="product-name">{{$cart->product_name}}</a></h5>
-                        <p><span>{{$cart->quantity}}</span>x<span>{{$cart->price}}</span></p>
-                        <span class="price">{{$cart->sum}}</span>
+                        <p><span>{{$cart->quantity}}</span>x<span>{{$cart->price}} $</span></p>
+                        <span class="price">{{$cart->sum}} $</span>
                     </div>
                     <button class="cartbox__item__remove">
                         <i class="fa fa-trash"></i>
@@ -192,14 +192,11 @@
             </div>
             <div class="cartbox__total">
                 <ul>
-                    <li><span class="cartbox__total__title">Subtotal</span><span class="price">$70</span></li>
-                    <li class="shipping-charge"><span class="cartbox__total__title">Shipping Charge</span><span
-                            class="price">$05</span></li>
                     <li class="grandtotal">Total<span class="price">$75</span></li>
                 </ul>
             </div>
             <div class="cartbox__buttons">
-                <a class="food__btn" href="cart.html"><span>View cart</span></a>
+                {{-- <a class="food__btn" href="cart.html"><span>View cart</span></a> --}}
                 <a class="food__btn" href="checkout.html"><span>Checkout</span></a>
             </div>
         </div>

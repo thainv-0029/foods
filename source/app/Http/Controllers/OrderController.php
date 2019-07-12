@@ -52,6 +52,7 @@ class OrderController extends Controller
         $order->message = $request->message;
         $order->total = Cart::subtotal();
 
+        Cart::destroy();
         $order->save();
         return redirect ('/home');
     }

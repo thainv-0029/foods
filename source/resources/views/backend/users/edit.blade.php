@@ -109,7 +109,7 @@
                                     <i class="fa fa-dot-circle-o"></i>{{  __('Submit') }}
                                 </button> 
                                 &nbsp; &nbsp;
-                                <a href="{{ route('admin') }}" type="reset" class="btn btn-danger btn-md">
+                                <a href="{{ route('users') }}" type="reset" class="btn btn-danger btn-md">
                                     <i class="fa fa-ban"></i> {{ __('Cancel') }} </a>
                             </div>
                     </form>

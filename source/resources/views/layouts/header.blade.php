@@ -150,8 +150,8 @@
                         <!-- Cartbox Single Item -->
                         <div class="cartbox__item">
                             <div class="cartbox__item__thumb">
-                                <a>
-                                    <img src="/template_ver2.0/images/menu-list/{!!$item->options->img!!}"
+                                <a href="/product_detail/3">
+                                    <img src="{{ asset('storage/img/upload/'.$item->options->img) }}"
                                         alt="/template_ver2.0/images/menu-list/{!!$item->options->img!!}">
                                 </a>
                             </div>

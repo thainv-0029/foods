@@ -43,17 +43,23 @@
                         @endif
                         @csrf
                         <fieldset>
-                            <legend>{{ __('Create a new role') }}</legend>
+                            <legend>{{ __('Create a new category') }}</legend>
                             <div class="form-group">
-                                <label for="name" class="control-label">{{ __('Name') }}</label>
+                                    <label for="name" class="control-label">{{ __('Name') }}</label>
+                                    <div class="">
+                                        <input type="text" class="form-control" id="name" name="name" disabled>
+                                    </div>
+                                </div>
+                            <div class="form-group">
+                                <label for="description" class="control-label">{{ __('Description') }}</label>
                                 <div class="">
-                                    <input type="text" class="form-control" id="name" name="name">
+                                    <input type="text" class="form-control" id="category_des" name="category_des">
                                 </div>
                             </div>
-                            <div class="form-group">
+                                <div class="form-group">
                                 <div class="col-lg-10 col-lg-offset-2">
                                     <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
-                                    <a href="{{ route('roles') }}" type="reset"
+                                    <a href="{{ route('categories') }}" type="reset"
                                         class="btn btn-danger">{{ __('Cancel') }}</a>
                                 </div>
                             </div>

@@ -19,3 +19,16 @@
 .submit-btn-group > button {
     border-radius: 5px;
 }
+
+.btn-create {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card, .card table , .card .pagination > li {
+    border-radius: 5px;
+}
+
+.food__list__thumb, .single__food__list {
+    width: 100%;
+}

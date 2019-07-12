@@ -73,8 +73,13 @@
                             {{	session('status')	}}
                         </div>
                         @endif
+                        <a href="{{ route('roles.create') }}" class="btn btn-success btn-create">
+                            <i class="fa fa fa-plus-circle"></i>
+                            {{ __('Add new role') }}
+                        </a>
+
                         @if ($roles->isEmpty())
-                        <p> There is no role.</p>
+                        <p> {{ __('There is no role.') }}</p>
                         @else
 
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -95,10 +100,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <a href="{{ route('roles.create') }}" class="btn btn-success">
-                            <i class="fa fa fa-plus-circle"></i>
-                            {{ __('Add new role') }}
-                        </a>
                     </div>
                 </div>
             </div>

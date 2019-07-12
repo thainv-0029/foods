@@ -46,10 +46,10 @@
 
 
                         @foreach($products as $product)
-                        <div class="single__food__list d-flex wow fadeInUp">
+                        <div class="single__food__list d-flex wow fadeInUp col-sm-12">
                             <div class="food__list__thumb">
                                 <a href="menu-details.html">
-                                    <img style="width:469px;height:253px"src="/template_ver2.0/images/menu-list/{!!$product->img!!}"
+                                    <img style="width: 469px; height:253px;" src="{{ asset('storage/img/upload/'.$product->img) }}"
                                         alt="list food images">
                                 </a>
                             </div>

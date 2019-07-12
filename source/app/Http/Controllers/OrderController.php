@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Cart;
+use Auth;
+use App\Order;
+use App\OrderDetail;
 
 class OrderController extends Controller
 {
@@ -38,7 +42,19 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $order = new Order();
+
+        $order->userId = Auth::user()->id;
+        $order->name = $request->name;
+        $order->email = $request->email;
+        $order->phone = $request->phone;
+        $order->payment = $request->payment;
+        $order->message = $request->message;
+        $order->total = Cart::subtotal();
+
+        Cart::destroy();
+        $order->save();
+        return redirect ('/home');
     }
 
     /**

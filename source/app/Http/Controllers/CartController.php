@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Cart;
+use Auth;
+use App\Order;
+use App\OrderDetail;
 
 class CartController extends Controller
 {
@@ -57,8 +60,7 @@ class CartController extends Controller
      */
     public function show()
     {
-        $carts = Cart::content();
-        return view ('cart',compact('carts'));
+        return view ('cart');
     }
 
     /**
@@ -67,9 +69,10 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        Cart::update($request->rowId, ['qty'=>$request->qty]);
+        return redirect ('cart');
     }
 
     /**
@@ -90,9 +93,15 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy()
     {
         Cart::destroy();
         return redirect('cart');
+    }
+
+    public function remove($rowId){
+        Cart::remove($rowId);
+        return redirect ('cart');
     }
 }

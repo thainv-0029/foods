@@ -717,19 +717,19 @@ a#scrollUp {
   background-position: center center; }
 
 .bg-image--17 {
-  background-image: url(images/bg/17.jpg);
+  background-image: url('/template_ver2.0/images/header/17.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
 
 .bg-image--18 {
-  background-image: url(https://d29u17ylf1ylz9.cloudfront.net/aahar/images/bg/18.jpg);
+  background-image: url('/template_ver2.0/images/header/18.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
 
 .bg-image--19 {
-  background-image: url(images/bg/19.jpg);
+  background-image: url('/template_ver2.0/images/header/19.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }

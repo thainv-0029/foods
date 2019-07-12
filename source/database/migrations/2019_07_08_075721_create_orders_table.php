@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('name');
             $table->string('email')->default("Không có!");
             $table->string('phone');
-            $table->string('payment');
+            $table->string('payment')->default("Ship");
             $table->string('message')->default("Không có thêm yêu cầu gì");
             $table->double('total');
             $table->timestamps();
